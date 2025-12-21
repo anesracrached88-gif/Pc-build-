@@ -4,20 +4,20 @@ app = Flask(__name__)
 
 def get_pc_build(budget, condition):
     budget = int(budget)
-    # قاعدة بيانات بسيطة تتغير كل 50 دولار
-    # يمكنك توسيع هذه القائمة لاحقاً
     if condition == "new":
-        if budget < 400:
-            return [("CPU", "Ryzen 3 3200G", "90"), ("RAM", "8GB DDR4", "30"), ("SSD", "256GB NVMe", "25"), ("Total", "", str(budget))]
-        elif budget < 450:
-            return [("CPU", "Ryzen 5 4500", "110"), ("GPU", "RX 580", "120"), ("RAM", "16GB DDR4", "50"), ("Total", "", "420")]
-        else: # 500+
-            return [("CPU", "i5-12400F", "150"), ("GPU", "RTX 3060", "280"), ("RAM", "16GB DDR4", "50"), ("Total", "", "480")]
+        if budget < 450:
+            return [("CPU", "AMD Ryzen 5 4500", "80"), ("GPU", "MSI GTX 1650 Ventus", "155"), ("MB", "ASUS Prime A520M-K", "70"), ("RAM", "16GB Corsair Vengeance", "45"), ("SSD", "500GB Kingston", "35"), ("PSU", "EVGA 500W 80+", "50")]
+        elif budget < 500:
+            return [("CPU", "Intel Core i3-12100F", "95"), ("GPU", "Gigabyte RX 6500 XT", "165"), ("MB", "MSI PRO H610M-G", "80"), ("RAM", "16GB Kingston FURY", "50"), ("SSD", "512GB Crucial M.2", "40"), ("PSU", "Corsair CV550", "60")]
+        elif budget < 550:
+            return [("CPU", "AMD Ryzen 5 5500", "105"), ("GPU", "Sapphire Pulse RX 6600", "210"), ("MB", "Gigabyte B450M DS3H", "75"), ("RAM", "16GB G.Skill Ripjaws", "55"), ("SSD", "500GB Samsung 980", "50"), ("PSU", "Cooler Master 550W", "55")]
+        else: # Build for $600+
+            return [("CPU", "Intel i5-12400F", "140"), ("GPU", "ASUS Dual RTX 3060", "290"), ("MB", "ASUS Prime B760M-A", "120"), ("RAM", "16GB Corsair DDR4", "60"), ("SSD", "1TB WD Blue", "70"), ("PSU", "Corsair CX650", "80")]
     else: # Used from eBay
-        if budget < 400:
-            return [("CPU (Used)", "Ryzen 5 3600", "60"), ("GPU (Used)", "GTX 1070", "110"), ("RAM", "16GB", "40"), ("Total", "", "210")]
+        if budget < 500:
+            return [("CPU (Used)", "Ryzen 5 3600", "60"), ("GPU (Used)", "GTX 1080 Ti", "160"), ("MB (Used)", "B450 Board", "65"), ("RAM", "16GB", "35"), ("Total", "Calculated for eBay", "320")]
         else:
-            return [("CPU (Used)", "i7-9700K", "120"), ("GPU (Used)", "RTX 2070", "180"), ("RAM", "16GB", "40"), ("Total", "", "340")]
+            return [("CPU (Used)", "i7-10700K", "130"), ("GPU (Used)", "RTX 2080 Super", "210"), ("MB (Used)", "Z490 Board", "100"), ("RAM", "16GB", "40"), ("Total", "Calculated for eBay", "480")]
 
 @app.route('/')
 def index():
