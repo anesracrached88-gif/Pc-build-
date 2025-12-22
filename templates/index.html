@@ -1,79 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI PC Builder | Precision Configurations</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>باني الكمبيوتر - الصفحة الرئيسية</title>
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&q=80&w=1920') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.2);
-            width: 100%;
-            max-width: 450px;
-            text-align: center;
-        }
-        h1 { font-weight: 600; margin-bottom: 30px; letter-spacing: 1px; }
-        .input-group { margin-bottom: 20px; text-align: left; }
-        label { display: block; margin-bottom: 8px; font-size: 14px; opacity: 0.8; }
-        select, input {
-            width: 100%;
-            padding: 12px;
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 8px;
-            color: white;
-            font-size: 16px;
-            outline: none;
-        }
-        button {
-            width: 100%;
-            padding: 15px;
-            background: #00d2ff;
-            background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);
-            background: linear-gradient(to right, #3a7bd5, #00d2ff);
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
-        }
-        button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,210,255,0.4); }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; text-align: center; padding: 50px; }
+        .builder-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: inline-block; text-align: right; }
+        select, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ddd; }
+        button { background-color: #2ecc71; color: white; border: none; cursor: pointer; font-weight: bold; }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>PC BUILDER</h1>
+    <div class="builder-card">
+        <h1>ابني تجميعتك</h1>
         <form method="POST">
-            <div class="input-group">
-                <label>Component Condition</label>
-                <select name="condition">
-                    <option value="new">Brand New Components</option>
-                    <option value="used">Used Components (eBay / Market)</option>
-                </select>
-            </div>
-            <div class="input-group">
-                <label>Your Budget (USD)</label>
-                <input type="number" name="budget" placeholder="e.g. 500" step="50" required>
-            </div>
-            <button type="submit">GENERATE BUILD</button>
+            <label>اختر المعالج:</label>
+            <select name="cpu">
+                {% for name in parts.cpus %}
+                <option value="{{ name }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+
+            <label>اختر كرت الشاشة:</label>
+            <select name="gpu">
+                {% for name in parts.gpus %}
+                <option value="{{ name }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+
+            <label>اختر الرامات:</label>
+            <select name="ram">
+                {% for name in parts.rams %}
+                <option value="{{ name }}">{{ name }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">احسب السعر</button>
         </form>
     </div>
 
