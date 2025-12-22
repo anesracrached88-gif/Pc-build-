@@ -1,31 +1,55 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>النتيجة النهائية</title>
+    <title>Your Configuration | Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; text-align: center; padding: 50px; }
-        .card { background: white; padding: 30px; border-radius: 12px; display: inline-block; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .price { font-size: 40px; color: #28a745; margin: 20px 0; }
-        .info { text-align: right; margin-bottom: 20px; }
-        .btn { background: #6c757d; color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0f0c29;
+            background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #00d2ff;
+            max-width: 500px;
+            width: 90%;
+        }
+        .price-tag { font-size: 40px; color: #00d2ff; margin: 10px 0; font-weight: 600; }
+        .part-list { text-align: left; margin: 25px 0; background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px; }
+        .part-item { margin: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
+        .part-item span { color: #00d2ff; font-weight: 600; }
+        .back-btn { color: #aaa; text-decoration: none; font-size: 14px; }
+        .condition-badge { background: #00d2ff; color: #000; padding: 2px 10px; border-radius: 5px; font-size: 12px; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h1>تجميعتك المختارة</h1>
-        <div class="info">
-            <p><strong>المعالج:</strong> {{ cpu }}</p>
-            <p><strong>كرت الشاشة:</strong> {{ gpu }}</p>
-            <p><strong>الرامات:</strong> {{ ram }}</p>
+        <span class="condition-badge">{{ condition.upper() }} BUILD</span>
+        <h2>Optimized Configuration</h2>
+        <div class="price-tag">${{ budget }}</div>
+        
+        <div class="part-list">
+            <div class="part-item">CPU: <span>{{ build.cpu }}</span></div>
+            <div class="part-item">GPU: <span>{{ build.gpu }}</span></div>
+            <div class="part-item">RAM: <span>{{ build.ram }}</span></div>
         </div>
-        <div class="price">${{ total }}</div>
-        <a href="/" class="btn">العودة للبداية</a>
+
+        <a href="/" class="back-btn">← New Build</a>
     </div>
 
     <script type="text/javascript" src="https://pl28306977.effectivegatecpm.com/99/62/59/996259cc477e89c72d4743ae70ce850d.js"></script>
-
 </body>
 </html>
