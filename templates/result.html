@@ -7,12 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1587202372775-e229f172b9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                        url('https://images.unsplash.com/photo-1587202372775-e229f172b9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-attachment: fixed;
             color: white;
             font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
         .glass-card {
             background: rgba(255, 255, 255, 0.05);
@@ -20,55 +23,60 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 40px;
-            margin-top: 50px;
         }
-        .spec-label { color: #00d4ff; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
-        .spec-value { font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
+        .spec-label { color: #00d4ff; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+        .spec-value { font-size: 1.1rem; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
+        .budget-badge { background: #00d4ff; color: #000; padding: 5px 15px; border-radius: 50px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-md-8 glass-card shadow-lg text-center">
-            
+
             <h1 class="mb-2">Optimal Build Found!</h1>
-            <p class="text-muted mb-4">Budget: ${{ budget }} | Status: {{ condition }}</p>
+            <p class="text-muted mb-4">لقد قمنا بتحليل ميزانيتك: <span class="budget-badge">${{ budget }}</span></p>
 
             <div class="my-4">
-                <script src="https://pl28306977.effectivegatecpm.com/99/62/59/996259cc477e89c72d4743ae70ce850d.js"></script>
+                <script src="https://pl28306977.effectivegatecpm.com/73/1c/3e/731c3e3e4a4e5d5e5e5e5e5e5e5e5e5e.js"></script>
             </div>
 
             <div class="text-start mt-5">
                 <div class="row">
                     <div class="col-md-6">
                         <p class="spec-label">Processor (CPU)</p>
-                        <p class="spec-value"> {{ build.cpu }}</p>
-                        
-                        <p class="spec-label">Graphics Card (GPU)</p>
-                        <p class="spec-value"> {{ build.gpu }}</p>
+                        <p class="spec-value">{{ build.cpu }}</p>
+
+                        <p class="spec-label">Graphics (GPU)</p>
+                        <p class="spec-value">{{ build.gpu }}</p>
 
                         <p class="spec-label">Motherboard</p>
-                        <p class="spec-value"> {{ build.mobo }}</p>
+                        <p class="spec-value">{{ build.mobo }}</p>
                     </div>
                     <div class="col-md-6">
                         <p class="spec-label">Memory (RAM)</p>
-                        <p class="spec-value"> {{ build.ram }}</p>
-                        
+                        <p class="spec-value">{{ build.ram }}</p>
+
                         <p class="spec-label">Storage (SSD)</p>
-                        <p class="spec-value"> {{ build.storage }}</p>
+                        <p class="spec-value">{{ build.storage }}</p>
+                        
+                        <p class="spec-label">Condition</p>
+                        <p class="spec-value">{{ condition }}</p>
                     </div>
                 </div>
             </div>
 
             <div class="my-4">
-                <script src="https://pl28306977.effectivegatecpm.com/99/62/59/996259cc477e89c72d4743ae70ce850d.js"></script>
+                <script src="https://pl28306977.effectivegatecpm.com/73/1c/3e/731c3e3e4a4e5d5e5e5e5e5e5e5e5e5e.js"></script>
             </div>
 
-            <a href="/" class="btn btn-outline-info mt-4 px-5">Build Another PC</a>
+            <a href="/" class="btn btn-outline-info mt-3 w-100">بناء تجميعة أخرى بميزانية مختلفة</a>
         </div>
     </div>
 </div>
-<script src="https://pl28312703.effectivegatecpm.com/73/29/6a/73296a2d02ffc5087c9ca2befda76c3e.js"></script>
+
+<script src="https://pl28312703.effectivegatecpm.com/73/1c/3e/731c3e3e4a4e5d5e5e5e5e5e5e5e5e5e.js"></script>
+
 </body>
 </html>
