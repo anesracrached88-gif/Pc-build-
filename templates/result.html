@@ -3,41 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Build Results - PC Advisor</title>
+    <title>Your Ultimate Build - PC Advisor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background-color: #0d1117; color: #c9d1d9; font-family: sans-serif; }
-        .result-container { max-width: 600px; margin: 50px auto; padding: 20px; background: #161b22; border-radius: 15px; border: 1px solid #30363d; }
-        .spec-item { padding: 10px; border-bottom: 1px solid #30363d; display: flex; justify-content: space-between; }
-        .spec-label { color: #58a6ff; font-weight: bold; }
+        body {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1587202372775-e229f172b9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 50px;
+        }
+        .spec-label { color: #00d4ff; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
+        .spec-value { font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
     </style>
 </head>
 <body>
 
-<div class="container text-center">
-    <div class="result-container shadow-lg">
-        <h2 class="mb-4 text-white">Your PC Recommendation</h2>
-        
-        <div class="my-3">
-            <script src="https://pl28306977.effectivegatecpm.com/99/62/59/996259cc477e89c72d4743ae70ce850d.js"></script>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 glass-card shadow-lg text-center">
+            
+            <h1 class="mb-2">Optimal Build Found!</h1>
+            <p class="text-muted mb-4">Budget: ${{ budget }} | Status: {{ condition }}</p>
+
+            <div class="my-4">
+                <script src="https://pl28306977.effectivegatecpm.com/99/62/59/996259cc477e89c72d4743ae70ce850d.js"></script>
+            </div>
+
+            <div class="text-start mt-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="spec-label">Processor (CPU)</p>
+                        <p class="spec-value"> {{ build.cpu }}</p>
+                        
+                        <p class="spec-label">Graphics Card (GPU)</p>
+                        <p class="spec-value"> {{ build.gpu }}</p>
+
+                        <p class="spec-label">Motherboard</p>
+                        <p class="spec-value"> {{ build.mobo }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="spec-label">Memory (RAM)</p>
+                        <p class="spec-value"> {{ build.ram }}</p>
+                        
+                        <p class="spec-label">Storage (SSD)</p>
+                        <p class="spec-value"> {{ build.storage }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-4">
+                <script src="https://pl28306977.effectivegatecpm.com/99/62/59/996259cc477e89c72d4743ae70ce850d.js"></script>
+            </div>
+
+            <a href="/" class="btn btn-outline-info mt-4 px-5">Build Another PC</a>
         </div>
-
-        {% if build %}
-        <div class="text-start">
-            <div class="spec-item"><span class="spec-label">CPU:</span> <span>{{ build.cpu }}</span></div>
-            <div class="spec-item"><span class="spec-label">GPU:</span> <span>{{ build.gpu }}</span></div>
-            <div class="spec-item"><span class="spec-label">RAM:</span> <span>{{ build.ram }}</span></div>
-            <div class="spec-item"><span class="spec-label">Storage:</span> <span>{{ build.storage }}</span></div>
-        </div>
-        {% else %}
-            <p class="text-warning">No specific build found for this budget. Try another!</p>
-        {% endif %}
-
-        <a href="/" class="btn btn-primary mt-4 w-100">Search Again</a>
-    </div>
-
-    <div class="mt-4">
-        <script src="https://pl28306977.effectivegatecpm.com/99/62/59/996259cc477e89c72d4743ae70ce850d.js"></script>
     </div>
 </div>
 
