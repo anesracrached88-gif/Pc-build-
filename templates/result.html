@@ -6,11 +6,17 @@
     <title>Your Custom PC Build</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background: #0b0e14; color: #fff; padding: 40px 0; }
-        .spec-box { background: rgba(255,255,255,0.05); border-left: 4px solid #00d4ff; padding: 20px; border-radius: 10px; margin-bottom: 15px; }
+        body { background: #0b0e14; color: #fff; padding-top: 50px; font-family: 'Segoe UI', sans-serif; }
+        .spec-box { 
+            background: rgba(255,255,255,0.05); 
+            border: 1px solid rgba(255,255,255,0.1); 
+            padding: 15px; 
+            margin-bottom: 15px; 
+            border-radius: 12px; 
+        }
         .label { color: #00d4ff; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-        .value { font-size: 1.2rem; font-weight: 500; }
-        .badge-info { background: #00d4ff; color: #000; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; }
+        .value { font-size: 1.2rem; font-weight: 500; display: block; }
+        .badge-info { background: #00d4ff; color: #000; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -18,35 +24,70 @@
     <div class="row justify-content-center text-center">
         <div class="col-md-9">
             <h2 class="mb-1">Optimal Build Found!</h2>
-            <p class="mb-4 text-muted">Estimated Budget: <span class="text-white font-weight-bold">${{ budget }}</span> | Condition: <span class="badge-info">{{ condition }}</span></p>
+            <p class="mb-4 text-muted">Estimated Budget: <span class="badge badge-info">${{ build.budget_entered }}</span></p>
 
             <div class="mb-4">
-                <script type="text/javascript" src="https://pl28306977.effectivegatecpm.com/73/1c/3e/731c3e3e4a4e5d5e5e5e5e5e5e5e5e5e.js"></script>
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : 'YOUR_AD_KEY_1',
+                        'format' : 'iframe',
+                        'height' : 90,
+                        'width' : 728,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/YOUR_AD_KEY_1/invoke.js"></script>
             </div>
 
             <div class="row text-start">
                 <div class="col-md-6">
-                    <div class="spec-box"><div class="label">Processor (CPU)</div><div class="value">{{ build.cpu }}</div></div>
-                    <div class="spec-box"><div class="label">Graphics Card (GPU)</div><div class="value">{{ build.gpu }}</div></div>
-                    <div class="spec-box"><div class="label">Motherboard</div><div class="value">{{ build.mobo }}</div></div>
+                    <div class="spec-box">
+                        <div class="label">Processor (CPU)</div>
+                        <div class="value">{{ build.cpu }}</div>
+                    </div>
+                    <div class="spec-box">
+                        <div class="label">Graphics Card (GPU)</div>
+                        <div class="value">{{ build.gpu }}</div>
+                    </div>
+                    <div class="spec-box">
+                        <div class="label">Memory (RAM)</div>
+                        <div class="value">{{ build.ram }}</div>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="spec-box"><div class="label">Memory (RAM)</div><div class="value">{{ build.ram }}</div></div>
-                    <div class="spec-box"><div class="label">Storage</div><div class="value">{{ build.storage }}</div></div>
-                    <div class="spec-box"><div class="label">Status</div><div class="value">Ready for Order</div></div>
+                    <div class="spec-box">
+                        <div class="label">Storage (SSD/HDD)</div>
+                        <div class="value">{{ build.storage }}</div>
+                    </div>
+                    <div class="spec-box">
+                        <div class="label">Motherboard</div>
+                        <div class="value">Compatible {{ build.condition }} Board</div>
+                    </div>
+                    <div class="spec-box">
+                        <div class="label">Market Source</div>
+                        <div class="value text-cyan">{{ build.market }}</div>
+                    </div>
                 </div>
             </div>
 
             <div class="my-4">
-                <script type="text/javascript" src="https://pl28306977.effectivegatecpm.com/73/1c/3e/731c3e3e4a4e5d5e5e5e5e5e5e5e5e5e.js"></script>
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : 'YOUR_AD_KEY_2',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/YOUR_AD_KEY_2/invoke.js"></script>
             </div>
 
-            <a href="/" class="btn btn-outline-info mt-3 px-5">TRY DIFFERENT BUDGET</a>
+            <a href="/" class="btn btn-outline-info mt-3 px-5">Build Another PC</a>
         </div>
     </div>
 </div>
 
-<script type="text/javascript" src="https://pl28312703.effectivegatecpm.com/73/1c/3e/731c3e3e4a4e5d5e5e5e5e5e5e5e5e5e.js"></script>
+<script type="text/javascript" src="//pl28312703.highperformanceformat.com/XX/XX/invoke.js"></script>
 </body>
 </html>
-
