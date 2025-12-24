@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,75 +11,117 @@
 
     <style>
         body {
-            /* خلفية متعلقة بالكمبيوتر كما طلبت */
+            /* خلفية قطع كمبيوتر احترافية */
             background-image: url('https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
         .container {
-            /* طبقة شفافة لجعل المحتوى مقروءاً فوق الخلفية */
-            background-color: rgba(0, 0, 0, 0.8);
+            /* طبقة شفافة لجعل الكلام واضحاً فوق الخلفية */
+            background-color: rgba(0, 0, 0, 0.85);
             padding: 40px;
-            border-radius: 15px;
-            margin-top: 50px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            border: 1px solid #333;
         }
 
         h1 {
             color: #007bff;
-            text-align: center;
-            font-weight: bold;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .form-label {
+            display: block;
+            text-align: right;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control, .form-select {
+            background-color: #222;
+            border: 1px solid #444;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .form-control:focus, .form-select:focus {
+            background-color: #333;
+            color: white;
+            border-color: #007bff;
+            box-shadow: none;
         }
 
         .btn-main {
             background-color: #007bff;
+            border: none;
             color: white;
+            padding: 12px;
             width: 100%;
+            font-size: 1.1rem;
             font-weight: bold;
-            padding: 10px;
+            border-radius: 8px;
+            transition: 0.3s;
+            cursor: pointer;
         }
-        
+
         .btn-main:hover {
             background-color: #0056b3;
-            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="text-center">
-        <h1>PC <span style="color: white;">Builder</span></h1>
-        <p class="text-light mb-4">Get the best components for your budget</p>
+    <h1>PC <span style="color: #fff;">Builder</span></h1>
+    <p>احصل على أفضل تجميعة كمبيوتر تناسب ميزانيتك</p>
 
-        <form action="/get_build" method="POST">
-            <div class="mb-3 text-start">
-                <label class="form-label">Your Budget ($)</label>
-                <input type="number" name="budget" class="form-control" placeholder="e.g. 500" required>
-            </div>
-            <div class="mb-4 text-start">
-                <label class="form-label">Condition</label>
-                <select name="condition" class="form-select">
-                    <option value="New">Brand New (Retail)</option>
-                    <option value="Used">Used (eBay Prices)</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-main">Generate Build</button>
-        </form>
-    </div>
+    <form action="/get_build" method="POST">
+        <div class="mb-3">
+            <label class="form-label">الميزانية ($)</label>
+            <input type="number" name="budget" class="form-control" placeholder="مثلاً: 800" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">حالة القطع</label>
+            <select name="condition" class="form-select">
+                <option value="New">جديدة (New)</option>
+                <option value="Used">مستعملة (Used - eBay)</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-main">إنشاء التجميعة الآن</button>
+    </form>
+
+    <p class="footer-text">كل ضغطة تساعدنا في الاستمرار!</p>
 </div>
 
 <script>
-  document.addEventListener('click', function() {
-    console.log("Ad action triggered");
-  });
+    document.addEventListener('click', function() {
+        console.log("User interaction detected for ads.");
+    });
 </script>
 
 </body>
 </html>
+
 

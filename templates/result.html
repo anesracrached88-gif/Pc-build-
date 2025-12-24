@@ -4,92 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Custom PC Build</title>
-<script src="https://5gvci.com/act/files/tag.min.js?z=10368997" data-cfasync="false" async></script>
+    
+    <script src="https://5gvci.com/act/files/tag.min.js?z=10368997" data-cfasync="false" async></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background: #0b0e14; color: #fff; padding-top: 50px; font-family: 'Segoe UI', sans-serif; }
-        .spec-box { 
-            background: rgba(255,255,255,0.05); 
-            border: 1px solid rgba(255,255,255,0.1); 
-            padding: 15px; 
-            margin-bottom: 15px; 
-            border-radius: 12px; 
+        body { 
+            background: #0b0e14; 
+            color: #fff; 
+            padding-top: 50px;
+            background-image: url('https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
         }
-        .label { color: #00d4ff; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-        .value { font-size: 1.2rem; font-weight: 500; display: block; }
-        .badge-info { background: #00d4ff; color: #000; font-weight: bold; }
+        .container {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #333;
+        }
+        .spec-box {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+        }
+        .label { color: #00d4ff; font-size: 0.85rem; text-transform: uppercase; font-weight: bold;}
+        .value { font-size: 1.1rem; font-weight: 500; display: block; margin-top: 5px;}
+        .text-cyan { color: #00d4ff; }
     </style>
 </head>
 <body>
-<div class="container">
+<div class="container my-5">
     <div class="row justify-content-center text-center">
         <div class="col-md-9">
-            <h2 class="mb-1">Optimal Build Found!</h2>
-            <p class="mb-4 text-muted">Estimated Budget: <span class="badge badge-info">${{ build.budget_entered }}</span></p>
+            <h2 class="mb-1 text-info">Optimal Build Found!</h2>
+            <p class="mb-4 text-muted">Estimated Budget: ${{ budget }}</p>
 
             <div class="mb-4">
-                <script type="text/javascript">
-                    atOptions = {
-                        'key' : 'YOUR_AD_KEY_1',
-                        'format' : 'iframe',
-                        'height' : 90,
-                        'width' : 728,
-                        'params' : {}
-                    };
-                </script>
-                <script type="text/javascript" src="//www.highperformanceformat.com/YOUR_AD_KEY_1/invoke.js"></script>
-            </div>
+                <p class="small text-muted">Advertisement</p>
+                </div>
 
             <div class="row text-start">
                 <div class="col-md-6">
-                    <div class="spec-box">
-                        <div class="label">Processor (CPU)</div>
-                        <div class="value">{{ build.cpu }}</div>
-                    </div>
                     <div class="spec-box">
                         <div class="label">Graphics Card (GPU)</div>
                         <div class="value">{{ build.gpu }}</div>
                     </div>
                     <div class="spec-box">
-                        <div class="label">Memory (RAM)</div>
-                        <div class="value">{{ build.ram }}</div>
+                        <div class="label">Processor (CPU)</div>
+                        <div class="value">{{ build.cpu }}</div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="spec-box">
+                        <div class="label">Memory (RAM)</div>
+                        <div class="value">{{ build.ram }}</div>
+                    </div>
+                    <div class="spec-box">
                         <div class="label">Storage (SSD/HDD)</div>
                         <div class="value">{{ build.storage }}</div>
-                    </div>
-                    <div class="spec-box">
-                        <div class="label">Motherboard</div>
-                        <div class="value">Compatible {{ build.condition }} Board</div>
-                    </div>
-                    <div class="spec-box">
-                        <div class="label">Market Source</div>
-                        <div class="value text-cyan">{{ build.market }}</div>
                     </div>
                 </div>
             </div>
 
-            <div class="my-4">
-                <script type="text/javascript">
-                    atOptions = {
-                        'key' : 'YOUR_AD_KEY_2',
-                        'format' : 'iframe',
-                        'height' : 250,
-                        'width' : 300,
-                        'params' : {}
-                    };
-                </script>
-                <script type="text/javascript" src="//www.highperformanceformat.com/YOUR_AD_KEY_2/invoke.js"></script>
+            <div class="spec-box text-center">
+                <div class="label">Market Source</div>
+                <div class="value text-cyan">{{ condition }} Market</div>
             </div>
 
-            <a href="/" class="btn btn-outline-info mt-3 px-5">Build Another PC</a>
+            <a href="/" class="btn btn-outline-info mt-4 w-100">Build Another PC</a>
         </div>
     </div>
 </div>
 
-<script type="text/javascript" src="//pl28312703.highperformanceformat.com/XX/XX/invoke.js"></script>
+<script>
+  document.addEventListener('click', function() {
+    console.log("Ad action triggered on result page");
+  });
+</script>
+
 </body>
 </html>
