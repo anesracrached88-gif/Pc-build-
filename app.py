@@ -64,7 +64,8 @@ def get_build():
 # --- كود التحقق لـ PropellerAds / Monetag ---
 @app.route('/sw.js')
 def serve_sw():
-    return app.send_static_file('sw.js')
+    return
+ app.send_static_file('sw.js')
 # --------------------------------------------
 
 if __name__ == '__main__':
