@@ -49,15 +49,25 @@ def get_build():
         budget = int(request.form.get('budget', 0))
     except:
         budget = 500
-        
+
     condition = request.form.get('condition', 'New').lower()
-    
+
     # اختيار الفئة بناءً على الميزانية والحالة
     category = "budget_low" if budget < 1000 else "budget_high"
-    selected_build = build_data[condition][category]
+    
+    # تأكد من أن الحالة موجودة في البيانات، وإلا استعمل "new" كافتراضي
+    selected_condition = condition if condition in build_data else "new"
+    selected_build = build_data[selected_condition][category]
 
-    return render_template('result.html', build=selected_build, budget=budget, condition=condition.upper())
+    return render_template('result.html', build=selected_build)
+
+# --- كود التحقق لـ PropellerAds / Monetag ---
+@app.route('/sw.js')
+def serve_sw():
+    return app.send_static_file('sw.js')
+# --------------------------------------------
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
+    # بورت 10000 هو الأنسب لـ Render
+    port = int(os.environ.get("PORT", 10000))
     app.run(host='0.0.0.0', port=port)
